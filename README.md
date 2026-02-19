@@ -11,6 +11,8 @@ Plugin Python para Krita que actualiza una capa de pintura con frames de:
 - `live_camera_layer/__init__.py`
 - `live_camera_layer/live_camera_layer.py`
 
+[![Live Camera Layer (Krita 5.x)](https://img.youtube.com/vi/v8boIYaSqbc/hqdefault.jpg)](https://www.youtube.com/watch?v=v8boIYaSqbc)
+
 ## Instalacion en Krita
 
 1. Empaqueta estos archivos en un `.zip` con esta estructura en la raiz:
