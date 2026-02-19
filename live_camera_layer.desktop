@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=live_camera_layer
+X-Python-2-Compatible=false
+Name=Live Camera Layer
+Comment=Show a live camera frame stream in a paint layer.
