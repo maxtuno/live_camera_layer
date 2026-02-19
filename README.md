@@ -78,17 +78,3 @@ Compress-Archive -Path live_camera_layer.desktop, live_camera_layer -Destination
 ## Licencia
 
 Este proyecto usa licencia MIT. Ver `LICENSE`.
-
-## Subir a GitHub
-
-Desde esta carpeta:
-
-```powershell
-git init -b main
-git add .
-git commit -m "Initial commit: Live Camera Layer plugin for Krita"
-git remote add origin https://github.com/TU_USUARIO/TU_REPO.git
-git push -u origin main
-```
-
-Nota: `live_camera_layer.zip` y `__pycache__` estan ignorados por `.gitignore`.
