@@ -393,7 +393,7 @@ class LiveCameraLayerDocker(DockWidget):
         image = QImage.fromData(data)
         if image.isNull():
             return None
-        return image.convertToFormat(QImage.Format_RGBA8888)
+        return image.convertToFormat(QImage.Format_ARGB32)
 
     def _extract_jpeg_frame(self, raw_data):
         if not raw_data:
@@ -436,7 +436,7 @@ class LiveCameraLayerDocker(DockWidget):
         if image is None or image.isNull():
             return False
 
-        composed = QImage(canvas_w, canvas_h, QImage.Format_RGBA8888)
+        composed = QImage(canvas_w, canvas_h, QImage.Format_ARGB32)
         composed.fill(Qt.transparent)
 
         painter = QPainter(composed)
@@ -468,6 +468,11 @@ class LiveCameraLayerDocker(DockWidget):
         return True
 
     def _qimage_to_bytes(self, image):
+        # Krita integer RGBA layers expect bytes ordered as B, G, R, A.
+        # QImage.Format_ARGB32 provides that byte layout on the platforms Krita
+        # supports in practice, so writing the raw buffer preserves the colors.
+        if image.format() != QImage.Format_ARGB32:
+            image = image.convertToFormat(QImage.Format_ARGB32)
         bits = image.bits()
         bits.setsize(image.byteCount())
         return bytes(bits)
@@ -489,8 +494,8 @@ class LiveCameraLayerDocker(DockWidget):
         if flip_h or flip_v:
             transformed = transformed.mirrored(flip_h, flip_v)
 
-        if transformed.format() != QImage.Format_RGBA8888:
-            transformed = transformed.convertToFormat(QImage.Format_RGBA8888)
+        if transformed.format() != QImage.Format_ARGB32:
+            transformed = transformed.convertToFormat(QImage.Format_ARGB32)
 
         return transformed
 
