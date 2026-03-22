@@ -46,9 +46,11 @@ live_camera_layer/
 4. Define `Create/Use layer name` (default `LiveCam`).
 5. Ajusta `Rotate` (0, 90, 180, 270) si necesitas girar la imagen.
 6. Activa `Flip horizontal` y/o `Flip vertical` si necesitas espejar.
-7. Marca `Fit to canvas` si quieres que el frame cubra todo el canvas manteniendo aspecto.
-8. Pulsa `Start` para iniciar; el boton cambia a `Stop`.
-9. Si quieres cambiar transparencia, usa la opacidad de la capa `LiveCam` desde el panel de capas de Krita.
+7. Si quieres quedarte solo con una parte de la camara, activa `Crop source` y arrastra un rectangulo en la vista previa.
+8. Ajusta `X`, `Y`, `Width` y `Height` para afinar el recorte en porcentajes o pulsa `Reset` para volver al frame completo.
+9. Marca `Fit to canvas` si quieres que el frame recortado cubra todo el canvas manteniendo aspecto.
+10. Pulsa `Start` para iniciar; el boton cambia a `Stop`.
+11. Si quieres cambiar transparencia, usa la opacidad de la capa `LiveCam` desde el panel de capas de Krita.
 
 ## Estado y robustez
 
